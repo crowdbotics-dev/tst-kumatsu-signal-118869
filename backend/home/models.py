@@ -9,7 +9,7 @@ class Kuma001(models.Model):
     rel_user_n_n = models.ManyToManyField("users.User",null=True,blank=True,related_name="kuma001_rel_user_n_n",)
     def test_method(self):
         import requests
-        response = requests.get("https://hello.com")
+        response = requests.get('https://hello.com')
         data = response.json()
         print(data)
         return data
