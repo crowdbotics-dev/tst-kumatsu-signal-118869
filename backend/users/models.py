@@ -19,7 +19,7 @@ class User(AbstractUser):
     everything that relates with an `User` is represented by this model.
     """
     name = models.CharField(null=True,blank=True,max_length=255,)
-    rel_salar_1_n = models.ForeignKey("home.Salar",blank=True,null=True,on_delete=models.CASCADE,related_name="user_rel_salar_1_n",)
-    rel_kuma001_1_1 = models.OneToOneField("home.Kuma001",blank=True,null=True,on_delete=models.CASCADE,related_name="user_rel_kuma001_1_1",)
+    rel_salar_1_n = models.ForeignKey("home.Salar",null=True,blank=True,on_delete=models.CASCADE,related_name="user_rel_salar_1_n",)
+    rel_kuma001_1_1 = models.OneToOneField("home.Kuma001",null=True,blank=True,on_delete=models.CASCADE,related_name="user_rel_kuma001_1_1",)
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
