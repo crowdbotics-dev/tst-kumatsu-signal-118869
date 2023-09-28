@@ -29,6 +29,24 @@ function api_v1_kuma001_destroy(payload) {
 function api_v1_login_create(payload) {
   return tstkumatsusignalAPI.post(`/api/v1/login/`, payload)
 }
+function api_v1_salar_list(payload) {
+  return tstkumatsusignalAPI.get(`/api/v1/salar/`)
+}
+function api_v1_salar_create(payload) {
+  return tstkumatsusignalAPI.post(`/api/v1/salar/`, payload)
+}
+function api_v1_salar_retrieve(payload) {
+  return tstkumatsusignalAPI.get(`/api/v1/salar/${payload.id}/`)
+}
+function api_v1_salar_update(payload) {
+  return tstkumatsusignalAPI.put(`/api/v1/salar/${payload.id}/`, payload)
+}
+function api_v1_salar_partial_update(payload) {
+  return tstkumatsusignalAPI.patch(`/api/v1/salar/${payload.id}/`, payload)
+}
+function api_v1_salar_destroy(payload) {
+  return tstkumatsusignalAPI.delete(`/api/v1/salar/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return tstkumatsusignalAPI.post(`/api/v1/signup/`, payload)
 }
@@ -77,6 +95,12 @@ export const apiService = {
   api_v1_kuma001_partial_update,
   api_v1_kuma001_destroy,
   api_v1_login_create,
+  api_v1_salar_list,
+  api_v1_salar_create,
+  api_v1_salar_retrieve,
+  api_v1_salar_update,
+  api_v1_salar_partial_update,
+  api_v1_salar_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
