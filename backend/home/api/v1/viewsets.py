@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Kuma001,Kuma001,Kuma001
-from .serializers import Kuma001Serializer,Kuma001Serializer,Kuma001Serializer
+from home.models import Kuma001,Salar,Kuma001,Salar,Kuma001,Salar
+from .serializers import Kuma001Serializer,SalarSerializer,Kuma001Serializer,SalarSerializer,Kuma001Serializer,SalarSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class Kuma001ViewSet(viewsets.ModelViewSet):
     serializer_class = Kuma001Serializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Kuma001.objects.all()
+
+class SalarViewSet(viewsets.ModelViewSet):
+    serializer_class = SalarSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Salar.objects.all()
